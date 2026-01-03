@@ -1,0 +1,91 @@
+name: Infuse
+version: '1.0.0'
+main: org.turbojax.Infuse
+api-version: '1.21'
+author: "TurboJax"
+softdepend: [PlaceholderAPI]
+commands:
+  infuse:
+    description: Main command for the plugin
+    usage: /infuse <args>
+  effects:
+    description: Opens the effect selection menu for a player.
+    usage: /effects [player]
+  lspark:
+    description: Activates the spark for the left effect.
+    usage: /lspark
+  rspark:
+    description: Activates the spark for the right effect.
+    usage: /rspark
+  ldrain:
+    description: Drains the left effect.
+    usage: /ldrain
+  rdrain:
+    description: Drains the right effect.
+    usage: /rdrain
+  trust:
+    description: Trusts a player.
+    usage: /trust <player>
+  untrust:
+    description: Removes a player from trust.
+    usage: /untrust <player>
+
+permissions:
+  infuse.offhand:
+    description: Allows the player to use sparks by swapping their offhand item with the one in their main hand
+    default: false
+  # /infuse seteffect <player> <slot> <effect>
+  infuse.command.infuse.seteffect:
+    description: Allows the player to use `/infuse seteffect`
+    default: op
+  # /infuse geteffect [player] [slot]
+  infuse.command.infuse.geteffect:
+    description: Allows the player to use `/infuse geteffect`
+    default: op
+  # /infuse giveeffect <player> <effect>
+  infuse.command.infuse.giveeffect:
+    description: Allows the player to use `/infuse giveeffect`
+    default: op
+  # /infuse removeeffect <player> <slot>
+  infuse.command.infuse.removeeffect:
+    description: Allows the player to use `/infuse removeeffect`
+    default: op
+  # /infuse reload
+  infuse.command.infuse.reload:
+    description: Allows the player to use `/infuse reload`
+    default: op
+  # /infuse resetcooldown <player> [effect]
+  infuse.command.infuse.resetcooldown:
+    description: Allows the player to use `/infuse resetcooldown`
+    default: op
+  # /infuse giveitem <itemKey> [player]
+  infuse.command.infuse.giveitem:
+    description: Allows the player to use `/infuse giveitem`
+    default: op
+  # /infuse offhand [player]
+  infuse.command.infuse.offhand:
+    description: Allows the player to use `/infuse offhand`
+    default: true
+    children:
+      infuse.command.infuse.offhand.other: true
+  infuse.command.infuse.offhand.other:
+    description: Allows the player to use `/infuse offhand` on other players
+    default: op
+  # /infuse swap [player]
+  infuse.command.infuse.swap:
+    description: Allows the player to use `/infuse swap`
+    default: true
+    children:
+      infuse.command.infuse.swap.other: true
+  infuse.command.infuse.swap.other:
+    description: Allows the player to use `/infuse swap` on other players
+    default: op
+  # /infuse recipes [player]
+  infuse.command.infuse.recipes:
+    description: Allows the player to use `/infuse recipes`
+    default: true
+    children:
+      infuse.command.infuse.recipes.other: true
+  infuse.command.infuse.recipes.other:
+    description: Allows the player to use `/infuse recipes` on other players
+    default: op

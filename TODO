@@ -1,0 +1,54 @@
+Commands:
+/infuse seteffect <player> <slot> <effect>: Sets the effect in a slot for a player.
+/infuse geteffect [player] [slot]: Lists the effects the player has. The <player> param defaults to the sender and the <slot> param defaults to "both"
+/infuse giveeffect <player> <effect>: Gives the player the specified effect.  Fails if the player has two effects equipped
+/infuse removeeffect <player> <slot>: Removes an effect from the player
+/infuse reload: Reloads the plugin
+/infuse resetcooldown <player> [effect]: resets cooldowns/durations for all effects or just the effect specified. 
+/infuse giveitem <itemKey> [player]: Gives the sender an infuse-related item.  Can be an effect key or "effect_selector" to give the selection item.  The optional parameter allows you to give the effect to another player.
+/infuse offhand [player]: Enables/disables offhand spark activation. The player parameter defaults to the sender.
+/infuse swap [player]: Swaps the effects a player has equipped. The player parameter defaults to the sender.
+/infuse recipes [player]: Opens the recipe gui for a player.  The player parameter defaults to the sender.
+/effects [player]: Opens the effect selection menu for the sender or the specified player
+/lspark: Activates the spark for the left effect
+/rspark: activates the spark for the right effect
+/ldrain: drains the left effect
+/rdrain: drains the right effect
+/trust <player>: Trusts a player
+/untrust <player>: Removes a player from trust
+
+Trusted players don't take damage from effect abilities.
+
+The action bar should have two spaces between the icons and time signatures with one space between left and right effects.
+
+Make ONE listener for passive effects.
+
+Use an interface for effects and compare types using instanceof.  Children classes should have a boolean in the constructor to make them augmented or regular.  Possibly, when an effect object is initialized, it will create both an augmented and regular instance of the effect, stored in a static variable.
+
+Maybe define a static Child#regular to get the regular instance of that effect and InfuseEffect#getRegular to convert that instance of the child to its regular form?  Would I need to do this vs just the static function?  I'll find out later.
+
+Use schedulers as little as possible.  I'm worried about how much bloat they may cause.
+
+Maybe try to consolidate event listeners into their own classes?  It would be nice to have them all be inside their respective effect classes, but I wonder what the performance difference would be with one big listener that handles a lot of things vs a lot of smaller listeners.  (Good thing for a branch tbh)
+
+Add a LOT of configs.
+
+Try to to a messages config.  I haven't done one well yet, but the enum thing is working pretty well so far.
+
+Add a brewing stand gui menu.  Figured this out earlier in a modified infuse, just copy from that.
+
+To get the effect icon for the action bar: (This will be defined inside the InfuseEffect interface)
+```java
+public default char getIcon() {
+    if (this == null) return '\ue901';
+
+    int status = 0;
+    if (this.isAugmented()) status += 2;
+    if (CooldownManager.isEffectActive(playerUUID, this.getKey())) status += 1;
+
+    return (char) Integer.parseInt("E" + status + String.format("%02d", this.getId()), 16);
+}
+```
+
+
+MORE POINTS LATER.  THIS IS JUST A BIIIIG BRAIN DUMP
