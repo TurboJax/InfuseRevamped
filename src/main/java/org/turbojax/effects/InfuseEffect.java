@@ -25,10 +25,21 @@ public abstract class InfuseEffect {
         boolean augmented = serializedEffect.startsWith("aug_");
         serializedEffect = serializedEffect.replace("aug_", "");
 
-        switch (serializedEffect) {
-            case "frost":
-                return new FrostEffect(augmented);
-        }
-        return null;
+        return switch (serializedEffect) {
+            case "emerald" -> new EmeraldEffect(augmented);
+            case "ender" -> new EnderEffect(augmented);
+            case "feather" -> new FeatherEffect(augmented);
+            case "fire" -> new FireEffect(augmented);
+            case "frost" -> new FrostEffect(augmented);
+            case "haste" -> new HasteEffect(augmented);
+            case "heart" -> new HeartEffect(augmented);
+            case "invis" -> new InvisEffect(augmented);
+            case "ocean" -> new OceanEffect(augmented);
+            case "regen" -> new RegenEffect(augmented);
+            case "speed" -> new SpeedEffect(augmented);
+            case "strength" -> new StrengthEffect(augmented);
+            case "thunder" -> new ThunderEffect(augmented);
+            default -> null;
+        };
     }
 }
