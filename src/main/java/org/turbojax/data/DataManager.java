@@ -26,10 +26,19 @@ public class DataManager extends TurboConfig {
     }
 
     public boolean hasEffect(Player player, InfuseEffect effect) {
+        return hasEffect(player, effect, false);
+    }
+
+    public boolean hasEffect(Player player, InfuseEffect effect, boolean differentiateAugmented) {
         InfuseEffect leftEffect = getLeftEffect(player);
         InfuseEffect rightEffect = getRightEffect(player);
-        Class<?> effectClass = effect.getClass();
 
-        return effectClass.isInstance(leftEffect) || effectClass.isInstance(rightEffect);
+        if (!differentiateAugmented) {
+            leftEffect = leftEffect.getRegularVersion();
+            rightEffect = rightEffect.getRegularVersion();
+            effect = effect.getRegularVersion();
+        }
+
+        return effect.equals(leftEffect) || effect.equals(rightEffect);
     }
 }
