@@ -9,6 +9,10 @@ public abstract class InfuseEffect {
         this.augmented = augmented;
     }
 
+    public abstract void applyPassives(Player player);
+
+    public abstract void activateSpark(Player player);
+
     public boolean getAugmented() {
         return augmented;
     }
