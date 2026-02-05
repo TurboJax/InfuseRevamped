@@ -1,6 +1,8 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class EmeraldEffect extends InfuseEffect {
     public EmeraldEffect(boolean augmented) {
@@ -8,7 +10,9 @@ public class EmeraldEffect extends InfuseEffect {
     }
 
     @Override
-    public void applyPassives(Player player) {}
+    public void applyPassives(Player player) {
+        player.addPotionEffect(new PotionEffect(PotionEffectType.HERO_OF_THE_VILLAGE, 20, 0));
+    }
 
     @Override
     public void activateSpark(Player player) {}
