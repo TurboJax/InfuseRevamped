@@ -23,13 +23,13 @@ public class TurboConfig {
     public TurboConfig(Plugin plugin, File file) {
         this.plugin = plugin;
         this.file = file;
-        this.config = YamlConfiguration.loadConfiguration(file);
+        this.config = new YamlConfiguration();
     }
 
     public TurboConfig(Plugin plugin, String path) {
         this.plugin = plugin;
         this.file = new File(plugin.getDataFolder(), path);
-        this.config = YamlConfiguration.loadConfiguration(file);
+        this.config = new YamlConfiguration();
     }
 
     /**
