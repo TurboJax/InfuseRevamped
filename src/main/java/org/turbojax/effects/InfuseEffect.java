@@ -1,5 +1,7 @@
 package org.turbojax.effects;
 
+import org.bukkit.entity.Player;
+
 public abstract class InfuseEffect {
     protected final String name;
     protected final boolean augmented;
@@ -13,12 +15,23 @@ public abstract class InfuseEffect {
 
     public abstract void activateSpark(Player player);
 
-    public boolean getAugmented() {
+    public boolean isAugmented() {
         return augmented;
     }
 
     public String getName() {
         return name;
+    }
+
+    public abstract InfuseEffect getAugmentedVersion();
+
+    public abstract InfuseEffect getRegularVersion();
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof InfuseEffect effect)) return false;
+
+        return this.serialize().equals(effect.serialize());
     }
 
     public String serialize() {
