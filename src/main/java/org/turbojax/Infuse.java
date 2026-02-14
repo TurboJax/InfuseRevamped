@@ -76,4 +76,12 @@ public class Infuse extends JavaPlugin {
         // Stopping the effectLoop task
         passiveLoop.cancel();
     }
+
+    public DataManager getDataManager() {
+        return dataManager;
+    }
+
+    public MainConfig getMainConfig() {
+        return mainConfig;
+    }
 }
