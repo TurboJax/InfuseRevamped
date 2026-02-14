@@ -1,10 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
+import org.turbojax.EffectIds;
 
 public class FeatherEffect extends InfuseEffect {
     public FeatherEffect(boolean augmented) {
-        super(3, "feather", augmented);
+        super(EffectIds.FEATHER, "feather", augmented);
     }
 
     @Override

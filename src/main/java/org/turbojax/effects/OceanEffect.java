@@ -1,10 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
+import org.turbojax.EffectIds;
 
 public class OceanEffect extends InfuseEffect {
     public OceanEffect(boolean augmented) {
-        super(9, "ocean", augmented);
+        super(EffectIds.OCEAN, "ocean", augmented);
     }
 
     @Override

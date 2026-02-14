@@ -1,10 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
+import org.turbojax.EffectIds;
 
 public class ThunderEffect extends InfuseEffect {
     public ThunderEffect(boolean augmented) {
-        super(13, "thunder", augmented);
+        super(EffectIds.THUNDER, "thunder", augmented);
     }
 
     @Override
