@@ -9,6 +9,7 @@ import org.turbojax.data.DataManager;
 import org.turbojax.data.MainConfig;
 import org.turbojax.data.Messages;
 import org.turbojax.effects.InfuseEffect;
+import org.turbojax.listeners.EmeraldListeners;
 
 public class Infuse extends JavaPlugin {
     private static Infuse instance;
@@ -64,6 +65,8 @@ public class Infuse extends JavaPlugin {
 
         // Starting the task
         passiveLoop.runTaskTimer(this, 0, 20);
+
+        Bukkit.getPluginManager().registerEvents(new EmeraldListeners(), instance);
     }
 
     @Override
