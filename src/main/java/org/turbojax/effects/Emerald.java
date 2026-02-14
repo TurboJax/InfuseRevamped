@@ -5,8 +5,8 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.turbojax.EffectId;
 
-public class EmeraldEffect extends InfuseEffect {
-    public EmeraldEffect(boolean augmented) {
+public class Emerald extends InfuseEffect {
+    public Emerald(boolean augmented) {
         super(EffectId.EMERALD, "emerald", augmented);
     }
 
@@ -20,11 +20,11 @@ public class EmeraldEffect extends InfuseEffect {
 
     @Override
     public InfuseEffect getAugmentedVersion() {
-        return new EmeraldEffect(true);
+        return new Emerald(true);
     }
 
     @Override
     public InfuseEffect getRegularVersion() {
-        return new EmeraldEffect(false);
+        return new Emerald(false);
     }
 }

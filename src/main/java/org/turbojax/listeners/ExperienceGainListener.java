@@ -1,7 +1,7 @@
 package org.turbojax.listeners;
 
 import org.turbojax.data.DataManager;
-import org.turbojax.effects.EmeraldEffect;
+import org.turbojax.effects.Emerald;
 import org.bukkit.event.player.PlayerExpChangeEvent;
 
 public class ExperienceGainListener {
@@ -12,7 +12,7 @@ public class ExperienceGainListener {
     }
 
     public void onExpGain(PlayerExpChangeEvent event) {
-        if (dataManager.hasEffect(event.getPlayer(), new EmeraldEffect(false))) {
+        if (dataManager.hasEffect(event.getPlayer(), new Emerald(false))) {
             event.setAmount(event.getAmount() * 2);
         }
     }

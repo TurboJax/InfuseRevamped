@@ -3,11 +3,11 @@ package org.turbojax.effects;
 import org.bukkit.entity.Player;
 import org.turbojax.EffectId;
 
-public class HeartEffect extends InfuseEffect {
-    public HeartEffect(boolean augmented) {
-        super(EffectId.HEART, "heart", augmented);
+public class Regen extends InfuseEffect {
+    public Regen(boolean augmented) {
+        super(EffectId.REGEN, "regen", augmented);
     }
-    
+
     @Override
     public void applyPassives(Player player) {}
 
@@ -16,11 +16,11 @@ public class HeartEffect extends InfuseEffect {
 
     @Override
     public InfuseEffect getAugmentedVersion() {
-        return new HeartEffect(true);
+        return new Regen(true);
     }
 
     @Override
     public InfuseEffect getRegularVersion() {
-        return new HeartEffect(false);
+        return new Regen(false);
     }
 }

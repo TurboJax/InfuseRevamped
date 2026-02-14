@@ -3,9 +3,9 @@ package org.turbojax.effects;
 import org.bukkit.entity.Player;
 import org.turbojax.EffectId;
 
-public class OceanEffect extends InfuseEffect {
-    public OceanEffect(boolean augmented) {
-        super(EffectId.OCEAN, "ocean", augmented);
+public class Ender extends InfuseEffect {
+    public Ender(boolean augmented) {
+        super(EffectId.ENDER, "ender", augmented);
     }
 
     @Override
@@ -16,11 +16,11 @@ public class OceanEffect extends InfuseEffect {
 
     @Override
     public InfuseEffect getAugmentedVersion() {
-        return new OceanEffect(true);
+        return new Ender(true);
     }
 
     @Override
     public InfuseEffect getRegularVersion() {
-        return new OceanEffect(false);
+        return new Ender(false);
     }
 }

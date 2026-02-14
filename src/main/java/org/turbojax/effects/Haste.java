@@ -3,11 +3,11 @@ package org.turbojax.effects;
 import org.bukkit.entity.Player;
 import org.turbojax.EffectId;
 
-public class FrostEffect extends InfuseEffect {
-    public FrostEffect(boolean augmented) {
-        super(EffectId.FROST, "frost", augmented);
+public class Haste extends InfuseEffect {
+    public Haste(boolean augmented) {
+        super(EffectId.HASTE, "haste", augmented);
     }
-
+    
     @Override
     public void applyPassives(Player player) {}
 
@@ -16,11 +16,11 @@ public class FrostEffect extends InfuseEffect {
 
     @Override
     public InfuseEffect getAugmentedVersion() {
-        return new FrostEffect(true);
+        return new Haste(true);
     }
 
     @Override
     public InfuseEffect getRegularVersion() {
-        return new FrostEffect(false);
+        return new Haste(false);
     }
 }

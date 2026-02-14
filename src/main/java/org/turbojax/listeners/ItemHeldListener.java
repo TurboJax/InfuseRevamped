@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.inventory.ItemStack;
 import org.turbojax.data.DataManager;
-import org.turbojax.effects.EmeraldEffect;
+import org.turbojax.effects.Emerald;
 
 public class ItemHeldListener {
     private final DataManager dataManager;
@@ -20,7 +20,7 @@ public class ItemHeldListener {
         Player player = event.getPlayer();
         ItemStack item = player.getInventory().getItem(event.getNewSlot());
 
-        if (dataManager.hasEffect(player, new EmeraldEffect(false))) {
+        if (dataManager.hasEffect(player, new Emerald(false))) {
             try {
                 item.addEnchantment(Enchantment.LOOTING, 5);
             } catch (IllegalArgumentException ignored) {}

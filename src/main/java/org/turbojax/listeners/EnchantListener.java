@@ -12,7 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.enchantment.PrepareItemEnchantEvent;
 import org.bukkit.inventory.ItemStack;
 import org.turbojax.data.DataManager;
-import org.turbojax.effects.EmeraldEffect;
+import org.turbojax.effects.Emerald;
 import org.turbojax.utils.WeightedRandom;
 
 import io.papermc.paper.datacomponent.DataComponentTypes;
@@ -32,7 +32,7 @@ public class EnchantListener {
 
     @EventHandler
     public void emeraldEnchantBonus(PrepareItemEnchantEvent event) {
-        if (dataManager.hasEffect(event.getEnchanter(), new EmeraldEffect(false))) {
+        if (dataManager.hasEffect(event.getEnchanter(), new Emerald(false))) {
             // Getting the world seed of the player
             long worldSeed = event.getEnchanter().getWorld().getSeed();
 

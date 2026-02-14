@@ -3,9 +3,9 @@ package org.turbojax.effects;
 import org.bukkit.entity.Player;
 import org.turbojax.EffectId;
 
-public class InvisEffect extends InfuseEffect {
-    public InvisEffect(boolean augmented) {
-        super(EffectId.INVIS, "invis", augmented);
+public class Strength extends InfuseEffect {
+    public Strength(boolean augmented) {
+        super(EffectId.STRENGTH, "strength", augmented);
     }
 
     @Override
@@ -16,11 +16,11 @@ public class InvisEffect extends InfuseEffect {
 
     @Override
     public InfuseEffect getAugmentedVersion() {
-        return new InvisEffect(true);
+        return new Strength(true);
     }
 
     @Override
     public InfuseEffect getRegularVersion() {
-        return new InvisEffect(false);
+        return new Strength(false);
     }
 }

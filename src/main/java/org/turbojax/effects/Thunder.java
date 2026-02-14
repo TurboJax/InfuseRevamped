@@ -3,9 +3,9 @@ package org.turbojax.effects;
 import org.bukkit.entity.Player;
 import org.turbojax.EffectId;
 
-public class FeatherEffect extends InfuseEffect {
-    public FeatherEffect(boolean augmented) {
-        super(EffectId.FEATHER, "feather", augmented);
+public class Thunder extends InfuseEffect {
+    public Thunder(boolean augmented) {
+        super(EffectId.THUNDER, "thunder", augmented);
     }
 
     @Override
@@ -16,11 +16,11 @@ public class FeatherEffect extends InfuseEffect {
 
     @Override
     public InfuseEffect getAugmentedVersion() {
-        return new FeatherEffect(true);
+        return new Thunder(true);
     }
 
     @Override
     public InfuseEffect getRegularVersion() {
-        return new FeatherEffect(false);
+        return new Thunder(false);
     }
 }

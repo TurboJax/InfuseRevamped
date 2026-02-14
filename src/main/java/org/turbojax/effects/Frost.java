@@ -3,9 +3,9 @@ package org.turbojax.effects;
 import org.bukkit.entity.Player;
 import org.turbojax.EffectId;
 
-public class EnderEffect extends InfuseEffect {
-    public EnderEffect(boolean augmented) {
-        super(EffectId.ENDER, "ender", augmented);
+public class Frost extends InfuseEffect {
+    public Frost(boolean augmented) {
+        super(EffectId.FROST, "frost", augmented);
     }
 
     @Override
@@ -16,11 +16,11 @@ public class EnderEffect extends InfuseEffect {
 
     @Override
     public InfuseEffect getAugmentedVersion() {
-        return new EnderEffect(true);
+        return new Frost(true);
     }
 
     @Override
     public InfuseEffect getRegularVersion() {
-        return new EnderEffect(false);
+        return new Frost(false);
     }
 }

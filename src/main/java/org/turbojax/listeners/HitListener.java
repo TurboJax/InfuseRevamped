@@ -11,7 +11,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.turbojax.data.DataManager;
 import org.turbojax.data.MainConfig;
-import org.turbojax.effects.EmeraldEffect;
+import org.turbojax.effects.Emerald;
 
 public class HitListener {
     private final Plugin plugin;
@@ -33,7 +33,7 @@ public class HitListener {
         if (attackingEntity instanceof Player attackingPlayer) {
             if (damagedEntity instanceof Player damagedPlayer) {
                 // Stealing xp with emerald effect
-                if (dataManager.hasEffect(attackingPlayer, new EmeraldEffect(false))) {
+                if (dataManager.hasEffect(attackingPlayer, new Emerald(false))) {
                     int stolenExp = Math.min(damagedPlayer.getTotalExperience(), mainConfig.emeraldExpToSteal());
 
                     // Removing xp from the target
@@ -52,7 +52,7 @@ public class HitListener {
                 };
                 
                 // Tracking hits against emerald players
-                if (dataManager.hasEffect(damagedPlayer, new EmeraldEffect(false))) {
+                if (dataManager.hasEffect(damagedPlayer, new Emerald(false))) {
                     Map<UUID,Integer> hitsTracked = emeraldHitTracker.computeIfAbsent(damagedPlayer.getUniqueId(), k -> new HashMap<>());
                     int hits = hitsTracked.getOrDefault(attackingPlayer.getUniqueId(), 0);
 
