@@ -1,13 +1,14 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
+import org.turbojax.EffectId;
 
 public abstract class InfuseEffect {
-    protected final int id;
+    protected final EffectId id;
     protected final String name;
     protected final boolean augmented;
 
-    public InfuseEffect(int id, String name, boolean augmented) {
+    public InfuseEffect(EffectId id, String name, boolean augmented) {
         this.id = id;
         this.name = name;
         this.augmented = augmented;
@@ -21,7 +22,7 @@ public abstract class InfuseEffect {
         return augmented;
     }
 
-    public int getId() {
+    public EffectId getId() {
         return id;
     }
     

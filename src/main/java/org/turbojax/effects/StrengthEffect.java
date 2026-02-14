@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class StrengthEffect extends InfuseEffect {
     public StrengthEffect(boolean augmented) {
-        super(EffectIds.STRENGTH, "strength", augmented);
+        super(EffectId.STRENGTH, "strength", augmented);
     }
 
     @Override

@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class HasteEffect extends InfuseEffect {
     public HasteEffect(boolean augmented) {
-        super(EffectIds.HASTE, "haste", augmented);
+        super(EffectId.HASTE, "haste", augmented);
     }
     
     @Override

@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class HeartEffect extends InfuseEffect {
     public HeartEffect(boolean augmented) {
-        super(EffectIds.HEART, "heart", augmented);
+        super(EffectId.HEART, "heart", augmented);
     }
     
     @Override

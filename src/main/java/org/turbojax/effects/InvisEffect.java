@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class InvisEffect extends InfuseEffect {
     public InvisEffect(boolean augmented) {
-        super(EffectIds.INVIS, "invis", augmented);
+        super(EffectId.INVIS, "invis", augmented);
     }
 
     @Override

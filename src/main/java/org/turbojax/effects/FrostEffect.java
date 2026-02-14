@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class FrostEffect extends InfuseEffect {
     public FrostEffect(boolean augmented) {
-        super(EffectIds.FROST, "frost", augmented);
+        super(EffectId.FROST, "frost", augmented);
     }
 
     @Override

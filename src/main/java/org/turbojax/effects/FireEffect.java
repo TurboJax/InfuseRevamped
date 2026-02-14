@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class FireEffect extends InfuseEffect {
     public FireEffect(boolean augmented) {
-        super(EffectIds.FIRE, "fire", augmented);
+        super(EffectId.FIRE, "fire", augmented);
     }
 
     @Override

@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class SpeedEffect extends InfuseEffect {
     public SpeedEffect(boolean augmented) {
-        super(EffectIds.SPEED, "speed", augmented);
+        super(EffectId.SPEED, "speed", augmented);
     }
     
     @Override

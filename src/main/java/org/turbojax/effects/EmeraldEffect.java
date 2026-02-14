@@ -3,11 +3,11 @@ package org.turbojax.effects;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class EmeraldEffect extends InfuseEffect {
     public EmeraldEffect(boolean augmented) {
-        super(EffectIds.EMERALD, "emerald", augmented);
+        super(EffectId.EMERALD, "emerald", augmented);
     }
 
     @Override

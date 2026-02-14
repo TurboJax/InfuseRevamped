@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class EnderEffect extends InfuseEffect {
     public EnderEffect(boolean augmented) {
-        super(EffectIds.ENDER, "ender", augmented);
+        super(EffectId.ENDER, "ender", augmented);
     }
 
     @Override

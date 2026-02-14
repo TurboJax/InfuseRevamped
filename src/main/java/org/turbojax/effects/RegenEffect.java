@@ -1,11 +1,11 @@
 package org.turbojax.effects;
 
 import org.bukkit.entity.Player;
-import org.turbojax.EffectIds;
+import org.turbojax.EffectId;
 
 public class RegenEffect extends InfuseEffect {
     public RegenEffect(boolean augmented) {
-        super(EffectIds.REGEN, "regen", augmented);
+        super(EffectId.REGEN, "regen", augmented);
     }
 
     @Override
