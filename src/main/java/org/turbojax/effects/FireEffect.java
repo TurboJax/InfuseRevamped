@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class FireEffect extends InfuseEffect {
     public FireEffect(boolean augmented) {
-        super("fire", augmented);
+        super(4, "fire", augmented);
     }
 
     @Override

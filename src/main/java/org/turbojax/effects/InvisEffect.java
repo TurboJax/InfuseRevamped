@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class InvisEffect extends InfuseEffect {
     public InvisEffect(boolean augmented) {
-        super("invis", augmented);
+        super(8, "invis", augmented);
     }
 
     @Override

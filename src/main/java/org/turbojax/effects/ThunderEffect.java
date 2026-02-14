@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class ThunderEffect extends InfuseEffect {
     public ThunderEffect(boolean augmented) {
-        super("thunder", augmented);
+        super(13, "thunder", augmented);
     }
 
     @Override

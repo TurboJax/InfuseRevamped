@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class StrengthEffect extends InfuseEffect {
     public StrengthEffect(boolean augmented) {
-        super("strength", augmented);
+        super(12, "strength", augmented);
     }
 
     @Override

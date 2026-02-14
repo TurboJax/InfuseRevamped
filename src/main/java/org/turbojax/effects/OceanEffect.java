@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class OceanEffect extends InfuseEffect {
     public OceanEffect(boolean augmented) {
-        super("ocean", augmented);
+        super(9, "ocean", augmented);
     }
 
     @Override

@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class FeatherEffect extends InfuseEffect {
     public FeatherEffect(boolean augmented) {
-        super("feather", augmented);
+        super(3, "feather", augmented);
     }
 
     @Override

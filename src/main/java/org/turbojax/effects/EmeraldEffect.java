@@ -6,7 +6,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class EmeraldEffect extends InfuseEffect {
     public EmeraldEffect(boolean augmented) {
-        super("emerald", augmented);
+        super(1, "emerald", augmented);
     }
 
     @Override

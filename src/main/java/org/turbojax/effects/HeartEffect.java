@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class HeartEffect extends InfuseEffect {
     public HeartEffect(boolean augmented) {
-        super("heart", augmented);
+        super(7, "heart", augmented);
     }
     
     @Override

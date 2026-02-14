@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class FrostEffect extends InfuseEffect {
     public FrostEffect(boolean augmented) {
-        super("frost", augmented);
+        super(5, "frost", augmented);
     }
 
     @Override

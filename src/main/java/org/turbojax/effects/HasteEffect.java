@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class HasteEffect extends InfuseEffect {
     public HasteEffect(boolean augmented) {
-        super("haste", augmented);
+        super(6, "haste", augmented);
     }
     
     @Override

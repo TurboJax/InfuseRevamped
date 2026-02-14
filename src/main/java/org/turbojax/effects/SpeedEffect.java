@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class SpeedEffect extends InfuseEffect {
     public SpeedEffect(boolean augmented) {
-        super("speed", augmented);
+        super(11, "speed", augmented);
     }
     
     @Override

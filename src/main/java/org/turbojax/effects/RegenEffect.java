@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class RegenEffect extends InfuseEffect {
     public RegenEffect(boolean augmented) {
-        super("regen", augmented);
+        super(10, "regen", augmented);
     }
 
     @Override

@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 public class EnderEffect extends InfuseEffect {
     public EnderEffect(boolean augmented) {
-        super("ender", augmented);
+        super(2, "ender", augmented);
     }
 
     @Override
