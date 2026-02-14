@@ -1,12 +1,12 @@
 package org.turbojax.data;
 
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
+import org.turbojax.Infuse;
 import org.turbojax.effects.InfuseEffect;
 
 public class DataManager extends TurboConfig {
-    public DataManager(Plugin plugin) {
-        super(plugin, "playerdata.yml");
+    public DataManager() {
+        super(Infuse.getInstance(), "playerdata.yml");
     }
 
     public InfuseEffect getLeftEffect(Player player) {

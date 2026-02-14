@@ -1,9 +1,9 @@
 package org.turbojax.data;
 
-import org.bukkit.plugin.Plugin;
+import org.turbojax.Infuse;
 
 public class Messages extends TurboConfig {
-    public Messages(Plugin plugin) {
-        super(plugin, "messages.yml");
+    public Messages() {
+        super(Infuse.getInstance(), "messages.yml");
     }
 }

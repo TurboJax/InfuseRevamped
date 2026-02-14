@@ -1,10 +1,10 @@
 package org.turbojax.data;
 
-import org.bukkit.plugin.Plugin;
+import org.turbojax.Infuse;
 
 public class MainConfig extends TurboConfig {
-    public MainConfig(Plugin plugin) {
-        super(plugin, "config.yml");
+    public MainConfig() {
+        super(Infuse.getInstance(), "config.yml");
     }
 
     public int emeraldExpToSteal() {
