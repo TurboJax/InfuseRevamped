@@ -38,7 +38,7 @@ public abstract class InfuseEffect {
     public boolean equals(Object other) {
         if (!(other instanceof InfuseEffect effect)) return false;
 
-        return this.serialize().equals(effect.serialize());
+        return effect.augmented == this.augmented && effect.id == this.id;
     }
 
     public String serialize() {
