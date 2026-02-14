@@ -6,7 +6,7 @@ import org.turbojax.effects.InfuseEffect;
 
 public class DataManager extends TurboConfig {
     public DataManager(Plugin plugin) {
-        super(plugin, "data/playerdata.yml");
+        super(plugin, "playerdata.yml");
     }
 
     public InfuseEffect getLeftEffect(Player player) {
