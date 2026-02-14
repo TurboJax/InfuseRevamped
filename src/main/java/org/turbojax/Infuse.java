@@ -13,14 +13,14 @@ public class Infuse extends JavaPlugin {
     private final DataManager dataManager;
     private final MainConfig mainConfig;
     private final Messages messages;
-    private final BukkitRunnable effectLoop;
+    private final BukkitRunnable passiveLoop;
 
     public Infuse() {
         this.dataManager = new DataManager(this);
         this.mainConfig = new MainConfig(this);
         this.messages = new Messages(this);
 
-        this.effectLoop = new BukkitRunnable() {
+        this.passiveLoop = new BukkitRunnable() {
             @Override
             public void run() {
                 // Looping over every online player
@@ -44,8 +44,8 @@ public class Infuse extends JavaPlugin {
         mainConfig.load();
         messages.load();
 
-        // Starting the task 
-        effectLoop.runTaskTimer(this, 0, 20);
+        // Starting the task
+        passiveLoop.runTaskTimer(this, 0, 20);
     }
 
     @Override
@@ -56,6 +56,6 @@ public class Infuse extends JavaPlugin {
         messages.save();
 
         // Stopping the effectLoop task
-        effectLoop.cancel();
+        passiveLoop.cancel();
     }
 }
