@@ -3,12 +3,12 @@ package org.turbojax.data;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
-
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
+
+import com.google.common.base.Preconditions;
 
 /**
  * A helpful interface that defined methods to load and save yaml configs.
@@ -21,12 +21,18 @@ public class TurboConfig {
     public final FileConfiguration config;
 
     public TurboConfig(Plugin plugin, File file) {
+        Preconditions.checkNotNull(plugin, "Plugin cannot be null!");
+        Preconditions.checkNotNull(file, "Cannot write to a null destination!");
+
         this.plugin = plugin;
         this.file = file;
         this.config = new YamlConfiguration();
     }
 
     public TurboConfig(Plugin plugin, String path) {
+        Preconditions.checkNotNull(plugin, "Plugin cannot be null!");
+        Preconditions.checkNotNull(path, "Cannot write to a null destination!");
+
         this.plugin = plugin;
         this.file = new File(plugin.getDataFolder(), path);
         this.config = new YamlConfiguration();
@@ -38,8 +44,8 @@ public class TurboConfig {
      * @return Whether the configuration was loaded successfully.
      */
     public boolean load() {
-        if (plugin == null) {
-            Bukkit.getLogger().log(Level.SEVERE, "{0} not loaded, cannot load {1}.", new String[]{plugin.getName(), file.getName()});
+        if (!plugin.isEnabled()) {
+            plugin.getLogger().log(Level.SEVERE, "{0} not loaded, cannot load {1}.", new String[]{plugin.getName(), file.getName()});
             return false;
         }
 
@@ -70,8 +76,8 @@ public class TurboConfig {
      */
     public boolean save() {
         // Getting a plugin instance to use
-        if (plugin == null) {
-            Bukkit.getLogger().log(Level.SEVERE, "{0} not loaded, cannot save {1}.", new String[]{plugin.getName(), file.getName()});
+        if (!plugin.isEnabled()) {
+            plugin.getLogger().log(Level.SEVERE, "{0} not loaded, cannot save {1}.", new String[]{plugin.getName(), file.getName()});
             return false;
         }
 
@@ -104,8 +110,8 @@ public class TurboConfig {
      */
     public boolean createFile(boolean replace) {
         // Getting a plugin instance to use
-        if (plugin == null) {
-            Bukkit.getLogger().log(Level.SEVERE, "{0} plugin not loaded, cannot create {1}.", new String[]{plugin.getName(), file.getName()});
+        if (!plugin.isEnabled()) {
+            plugin.getLogger().log(Level.SEVERE, "{0} plugin not loaded, cannot create {1}.", new String[]{plugin.getName(), file.getName()});
             return false;
         }
 
