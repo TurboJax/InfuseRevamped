@@ -10,7 +10,7 @@ public class DataManager extends TurboConfig {
     }
 
     public InfuseEffect getLeftEffect(Player player) {
-        return InfuseEffect.deserialize(config.getString(player.getUniqueId() + ".left"));
+        return InfuseEffect.deserialize(config.getInt(player.getUniqueId() + ".left", -1));
     }
 
     public void setLeftEffect(Player player, InfuseEffect effect) {
@@ -18,7 +18,7 @@ public class DataManager extends TurboConfig {
     }
 
     public InfuseEffect getRightEffect(Player player) {
-        return InfuseEffect.deserialize(config.getString(player.getUniqueId() + ".right"));
+        return InfuseEffect.deserialize(config.getInt(player.getUniqueId() + ".right", -1));
     }
 
     public void setRightEffect(Player player, InfuseEffect effect) {
