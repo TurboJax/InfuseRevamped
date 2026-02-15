@@ -51,4 +51,180 @@ public default char getIcon() {
 ```
 
 
-MORE POINTS LATER.  THIS IS JUST A BIIIIG BRAIN DUMP
+Effect features and proposed implementations:
+- Emerald Effect:
+  - Passives:
+    - Looting 5
+    - Permanent Hero of the Village
+    - 2x xp gain
+    - Consumables have a 50% chance to not be consumed
+    - Max level enchanting without bookshelves
+    - Each hit steals xp from your enemy
+    - Recieving 10 hits locks the attacker's food and xp
+  - Spark:
+    - Hero of the Village 5
+    - 4x xp gain
+    - Consumables have a 75% chance to not be consumed
+    - Share xp with nearby teammates
+    - Duration: 10s
+    - Cooldown: 30s
+- Ender Effect:
+  - Passives:
+    - All nearby enemies have glowing.
+    - Use dragons breath to shoot fireballs that curse players.
+    - Curse players on hit
+    - All cursed players share damage taken
+  - Spark:
+- Feather Effect:
+  - Passives:
+    - No fall damage
+    - Immune to kinetic energy
+    - Wind burst on all attacks
+    - Falling from higher deals more damage.
+    - Wind charges have 2x speed and can be used 0.5x faster.
+    - Recieving 10 hits spawns an orbiting windcharge (crouch to use it)
+      - Should the wind charge not have collision until the player uses it?
+  - Spark:
+    - Bounce off the ground to launch up into the air.
+    - Falling from higher up deals 2 hearts on impact
+    - Impact radius and bounce height scales with the distance fallen
+    - Enemies hit are given slow falling
+    - Crouch to cancel the bounce
+    - Duration: 5s
+    - Cooldown: 40s
+- Fire Effect:
+  - Passives:
+    - Permanent fire resistance
+    - Increased movement speed in lava
+    - Lava breaks your fall
+    - Auto-smelting (toggleable with /smelt)
+    - Flame on ranged attacks
+    - 10th hit sets enemies on fire
+    - Fire spreads to nearby enemies that touch each other
+    - Extinguish nearby water sources when on fire.
+  - Spark:
+    - Ignite nearby enemies
+    - Launch nearby mobs into the air (after 4 seconds)
+    - Extinguish nearby water sources
+    - Set flammable blocks on fire
+    - Duration: 4s
+    - Cooldown: 90s
+- Frost Effect:
+  - Passives:
+    - 10th hit freezes enemies and puts windcharges on cooldown
+    - Frosted enemies create ice trails and get mining fatigue
+    - Frost on ranged attacks
+    - 1.5x speed and 30% knockback resistance on ice/snow
+    - freeze nearby water sources
+    - walk on and swim through powder snow
+  - Spark:
+    - Apply frost and mining fatigue 2 on hit
+    - 2x speed on ice/snow
+    - Duration: 10s
+    - Cooldown: 60s
+- Haste Effect:
+  - Passives:
+    - Break blocks faster
+    - Tools get fortune 5 and unbreaking 10
+    - Crouch to vein mine ores
+      - Implement veinminer api or make it on my own?
+    - Enemies have reduced i-frames
+      - Use `Player#setNoDamageTicks`
+    - Each hit increases attack speed
+    - Attack speed decays every 1s
+  - Spark:
+    - Insta-mine any block
+    - Increased attack speed
+    - Duration: 15s
+    - Cooldown: 60s
+- Heart Effect:
+  - Passives:
+    - +5 hearts
+    - Eating food gives 2 absorption hearts
+    - Egaps give 10 absorption hearts
+    - Hit teammates to give them your absorption hearts
+      - Transfer rate = damage / 2 ? 
+    - 10th hit reveals opponent's HP
+  - Spark:
+    - +10 hearts
+    - Heals you for the amount of damage dealt in the past 30 seconds.
+    - Duration: 60s
+    - Cooldown: 120s
+- Invis Effect:
+  - Passives:
+    - Permanent invis
+    - No entity collision
+    - Mobs don't target you
+    - Immune to wither and darkness
+    - Obscures kill credit
+    - Blindness on ranged attacks
+    - 10th hit gives blindness, hides enemy health, and teleports you behind them
+  - Spark:
+    - Create a smoke screen around you
+    - Applies wither and blindness to enemies
+    - Gives true invis to you and your teammates
+    - Smoke radius increases with more teammates inside
+    - Duration: 10s
+    - Cooldown: 90s
+- Ocean Effect:
+  - Passives:
+    - Permanent dolphins grace and water breathing
+    - Drown nearby enemies
+    - Standing in rain speeds up drowning
+    - Nearby teammates recover air bubbles
+      - Maybe give water breathing to nearby teammates?
+    - Tridents have loyalty 5 and pull enemies
+      - Pulls enemies back to you.  With the trident maybe? (I can imagine some fun shenanigains with riptide lmao)
+  - Spark:
+    - Creates a whirlpool that pulls in nearby entities
+    - Duration: 5s
+    - Cooldown: 90s
+- Regen Effect:
+  - Passives:
+    - No hunger loss
+    - Permanent regen 1
+    - Every hit gives regen 2 for 3 seconds
+    - All food gives +3 saturation
+    - Eat anytime
+    - 10th hit takes away 1 hunger bar from your target
+  - Spark:
+    - Damage dealt heals you and nearby teammates
+      - Split health?  Evenly or weighted?
+    - Duration: 15s
+    - Cooldown: 60s
+- Speed Effect:
+  - Passives:
+    - 0.2x movement speed
+    - Each hit increases speed level
+    - Getting hit lowers speed level
+    - Bows charge 1.5x faster
+    - Improved projectile speed, accuracy, and range
+  - Spark:
+    - Dash forwards, dealing 2 hearts to hit enemies
+    - Duration: 1s
+    - Cooldown: 20s
+- Strength Effect:
+  - Passives:
+    - Shields are disabled for 2x longer
+    - Shields are damaged by 20 on each hit
+    - 0.5x damage penetrates shields when they are broken
+    - 2x damage to all mobs (players?)
+    - Piercing on all ranged attacks
+    - +0.3 attack damage for every 1 hp lost (cap?)
+    - 10th hit reveals opponent's armor durability for 3 seconds (dear god what)
+  - Spark:
+    - All attacks are crits
+    - Duration: 15s
+    - Cooldown: 60s
+- Thunder Effect:
+  - Passives:
+    - 10th hit strikes enemy with lighting dealing 1 heart
+    - Lightning chains to nearby enemies up to 10 times
+    - Lightning strikes every 5 hits when in rain.
+    - Tridents summon lightning when thrown
+  - Spark:
+    - Repeatedly strike enemies within the radius with lightning.
+    - Each enemy can be struck 3 times max
+    - Radius increases with each enemy inside of it.
+    - Duration: 10s
+    - Cooldown: 90s
