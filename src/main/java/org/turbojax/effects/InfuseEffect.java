@@ -92,7 +92,7 @@ public abstract class InfuseEffect {
         return item;
     }
 
-    public InfuseEffect fromItem(ItemStack item) {
+    public static InfuseEffect fromItem(ItemStack item) {
         if (item.getType() != Material.POTION) return null;
         List<Float> floats = item.getItemMeta().getCustomModelDataComponent().getFloats();
 
